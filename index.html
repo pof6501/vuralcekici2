@@ -19,19 +19,19 @@
     <meta property="og:url" content="https://www.diyarbakircekici724.com/">
     <meta property="og:title" content="Diyarbakır Oto Çekici 7/24 - En Hızlı Yol Yardım">
     <meta property="og:description" content="Diyarbakır'ın en iyi oto çekici firması. 7/24 profesyonel yol yardım, oto kurtarma ve vinç hizmeti.">
-    <meta property="og:image" content="https://www.diyarbakircekici724.com/logo.png">
+    <meta property="og:image" content="https://www.diyarbakircekici724.com/images/diyarbakir-oto-cekici.webp">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.diyarbakircekici724.com/">
     <meta property="twitter:title" content="Diyarbakır Oto Çekici 7/24 - En Hızlı Yol Yardım">
     <meta property="twitter:description" content="Diyarbakır'ın en iyi oto çekici firması. 7/24 profesyonel yol yardım, oto kurtarma ve vinç hizmeti.">
-    <meta property="twitter:image" content="https://www.diyarbakircekici724.com/logo.png">
+    <meta property="twitter:image" content="https://www.diyarbakircekici724.com/images/diyarbakir-oto-cekici.webp">
 
-    <!-- Favicon (varsayılan) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff6600'>🚛</text></svg>">
 
-    <!-- Font Awesome 6 (ikonlar için) -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
@@ -59,6 +59,8 @@
             align-items: center;
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             border-bottom: 4px solid #ffaa00;
+            position: relative;
+            z-index: 10;
         }
 
         .logo-container {
@@ -125,20 +127,46 @@
             text-decoration: underline;
         }
 
-        /* Banner / Hero */
+        /* HERO BÖLÜM - Video Arka Planlı */
         .hero {
-            background: url('https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            background-blend-mode: overlay;
-            background-color: rgba(0, 40, 60, 0.75);
-            padding: 4rem 2rem;
-            text-align: center;
-            color: white;
             position: relative;
+            width: 100%;
+            height: 80vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .hero-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 30, 50, 0.7);
+            z-index: 1;
         }
 
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 900px;
             margin: 0 auto;
+            text-align: center;
+            padding: 2rem;
         }
 
         .hero h2 {
@@ -179,6 +207,45 @@
         .stat-item i {
             color: #ffaa00;
             margin-right: 8px;
+        }
+
+        /* Sabit İletişim Butonları */
+        .fixed-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .fixed-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 2px solid white;
+        }
+        
+        .fixed-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        
+        .fixed-wa {
+            background-color: #25D366;
+        }
+        
+        .fixed-call {
+            background-color: #ffaa00;
         }
 
         /* Butonlar */
@@ -284,6 +351,95 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Galeri */
+        .gallery-section {
+            padding: 4rem 2rem;
+            background: #f0f7ff;
+            text-align: center;
+        }
+        
+        .gallery-section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #0b2b3b;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .gallery-section h3:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #ffaa00;
+            margin: 10px auto 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            height: 220px;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Video Bölümü */
+        .video-section {
+            padding: 4rem 2rem;
+            background: white;
+            text-align: center;
+        }
+        
+        .video-section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #0b2b3b;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .video-section h3:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #ffaa00;
+            margin: 10px auto 0;
+        }
+        
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         /* Neden Biz */
         .why-us {
             background: linear-gradient(145deg, #f0f7ff, #e6f0fa);
@@ -386,6 +542,10 @@
             .logo-text h1 {
                 font-size: 1.6rem;
             }
+            .hero {
+                height: 70vh;
+                min-height: 500px;
+            }
             .hero h2 {
                 font-size: 2.2rem;
             }
@@ -407,16 +567,30 @@
                 font-size: 1rem;
                 padding: 0.5rem 1rem;
             }
+            .fixed-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 1.7rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER: Logo, telefon ve site linki -->
+    <!-- Sabit WhatsApp ve Arama Butonları -->
+    <div class="fixed-buttons">
+        <a href="https://wa.me/905434739121?text=Merhaba%2C%20oto%20çekici%20yardımına%20ihtiyacım%20var" class="fixed-btn fixed-wa" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+905434739121" class="fixed-btn fixed-call" title="Hemen Ara">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- HEADER -->
     <header class="header">
         <div class="logo-container">
-            <!-- Logo: fontawesome ikonu + yazı (logo olarak kullan) -->
             <div class="logo-icon">
-                <i class="fas fa-truck"></i> <!-- çekici simgesi, logo gibi -->
+                <i class="fas fa-truck"></i>
             </div>
             <div class="logo-text">
                 <h1>DİYARBAKIR OTO ÇEKİCİ</h1>
@@ -427,7 +601,6 @@
             <a href="tel:+905434739121" class="phone-big">
                 <i class="fas fa-phone-alt"></i> 0543 473 91 21
             </a>
-            <!-- SİTE LİNKİ EKLENDİ -->
             <a href="https://www.diyarbakircekici724.com" target="_blank" class="website-link">
                 <i class="fas fa-globe"></i> www.diyarbakircekici724.com
             </a>
@@ -435,13 +608,19 @@
         </div>
     </header>
 
-    <!-- HERO BÖLÜM - Büyük tanıtım -->
+    <!-- HERO - Video Arka Planlı -->
     <section class="hero">
+        <!-- Video Arka Plan -->
+        <video class="hero-video-bg" autoplay muted loop playsinline poster="https://www.diyarbakircekici724.com/images/diyarbakir-oto-kurtarma2.png">
+            <source src="https://www.diyarbakircekici724.com/images/diyarbakir-cekici.mp4" type="video/mp4">
+            <!-- Tarayıcı video oynatmazsa resim gösterilecek -->
+        </video>
+        <div class="hero-overlay"></div>
+        
         <div class="hero-content">
             <h2>Diyarbakır'ın En İyisi!</h2>
             <p><i class="fas fa-check-circle" style="color:#ffaa00;"></i> Oto Çekici • Yol Yardım • Oto Kurtarma</p>
             
-            <!-- Hemen ARA ve WHATSAP BUTONLARI (sitede iki yerde olacak) -->
             <div class="cta-buttons">
                 <a href="https://wa.me/905434739121?text=Merhaba%2C%20oto%20çekici%20yardımına%20ihtiyacım%20var" class="btn btn-wa" target="_blank">
                     <i class="fab fa-whatsapp"></i> WhatsApp Hattı
@@ -486,7 +665,49 @@
         </div>
     </section>
 
-    <!-- NEDEN BİZ (Güvenilirlik) -->
+    <!-- FOTOĞRAF GALERİSİ (Verdiğin tüm resimler) -->
+    <section class="gallery-section">
+        <h3>Çalışmalarımızdan Kareler</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://www.diyarbakircekici724.com/images/diyarbakir-oto-kurtarma2.png" alt="Diyarbakır oto kurtarma" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.diyarbakircekici724.com/images/arac-cekici-diyarbakir.webp" alt="Araç çekici Diyarbakır" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.diyarbakircekici724.com/images/diyarbakir-oto-cekici-araba-kurtarma.webp" alt="Oto çekici araba kurtarma" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.diyarbakircekici724.com/images/diyarbak%C4%B1r-cekici-araba-oto-kurtarma.webp" alt="Diyarbakır çekici araba oto kurtarma" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.diyarbakircekici724.com/images/yol-yardim-cekici.webp" alt="Yol yardım çekici" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.diyarbakircekici724.com/images/diyarbakir-oto-cekici.webp" alt="Diyarbakır oto çekici" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.diyarbakircekici724.com/images/diyarbakir-cekici2.webp" alt="Diyarbakır çekici" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.diyarbakircekici724.com/images/cekici-oto-kurtarma-yol-yardim.webp" alt="Çekici oto kurtarma yol yardım" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- VİDEO GALERİSİ (İkinci video) -->
+    <section class="video-section">
+        <h3>Hizmet Videomuz</h3>
+        <div class="video-container">
+            <video controls poster="https://www.diyarbakircekici724.com/images/diyarbakir-oto-cekici.webp">
+                <source src="https://www.diyarbakircekici724.com/images/diyarbakir-oto-cekici1.mp4" type="video/mp4">
+                Tarayıcınız video etiketini desteklemiyor.
+            </video>
+        </div>
+    </section>
+
+    <!-- NEDEN BİZ -->
     <section class="why-us">
         <h3>Neden Diyarbakır Oto Çekici?</h3>
         <div class="features">
@@ -513,7 +734,7 @@
         </div>
     </section>
 
-    <!-- TEKRAR BUTONLU İLETİŞİM (Whatsapp ve Arama butonları yine burada) -->
+    <!-- İLETİŞİM -->
     <section class="contact-section">
         <h3>Yolda Kaldınız mı? Hemen Ulaşın!</h3>
         <p><i class="fas fa-phone-alt"></i> 7/24 Açık Hattımız: <strong>0543 473 91 21</strong></p>
@@ -525,19 +746,17 @@
                 <i class="fas fa-phone"></i> Hemen Ara
             </a>
         </div>
-        <p style="margin-top:2rem; font-size:1.2rem;"><i class="fas fa-check-circle" style="color:#ffaa00;"></i> Profesyonel oto kurtarma ve çekici hizmeti için tek numara.</p>
     </section>
 
-    <!-- Firma Bilgileri & Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
         <p><strong>Diyarbakır Oto Çekici 7/24</strong> | © 2025 Tüm hakları saklıdır.</p>
         <p><i class="fas fa-map-pin"></i> Merkez: Diyarbakır / Türkiye (7/24 servis)</p>
         <p>Telefon: <a href="tel:+905434739121">0543 473 91 21</a> | WhatsApp: <a href="https://wa.me/905434739121" target="_blank">0543 473 91 21</a></p>
         <p>Site: <a href="https://www.diyarbakircekici724.com" target="_blank">www.diyarbakircekici724.com</a></p>
-        <p style="margin-top:10px; font-size:0.9rem;"><i class="fas fa-truck"></i> Diyarbakır'ın en iyi oto çekici firması - Yol yardım, oto kurtarma, vinç</p>
     </footer>
 
-    <!-- SEO İÇİN EK YAPISAL VERİ (JSON-LD) -->
+    <!-- JSON-LD -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -545,9 +764,9 @@
         "name": "Diyarbakır Oto Çekici 7/24",
         "alternateName": "Diyarbakır Oto Kurtarma ve Yol Yardım",
         "url": "https://www.diyarbakircekici724.com",
-        "logo": "https://www.diyarbakircekici724.com/logo.png",
-        "image": "https://www.diyarbakircekici724.com/logo.png",
-        "description": "Diyarbakır oto çekici, yol yardım ve oto kurtarma hizmeti. 7/24 profesyonel ekip, en hızlı hizmet.",
+        "logo": "https://www.diyarbakircekici724.com/images/diyarbakir-oto-cekici.webp",
+        "image": "https://www.diyarbakircekici724.com/images/diyarbakir-oto-cekici.webp",
+        "description": "Diyarbakır oto çekici, yol yardım ve oto kurtarma hizmeti. 7/24 profesyonel ekip.",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Diyarbakır",
@@ -555,22 +774,11 @@
         },
         "telephone": "+905434739121",
         "openingHours": "Mo-Su 00:00-24:00",
-        "sameAs": [
-            "https://www.instagram.com/diyarbakircekici724",
-            "https://www.facebook.com/diyarbakircekici724"
-        ],
         "areaServed": {
             "@type": "City",
             "name": "Diyarbakır"
-        },
-        "priceRange": "₺₺"
+        }
     }
-    </script>
-
-    <!-- Küçük bir script: butonların düzgün çalışması için (opsiyonel) -->
-    <script>
-        // Butonlara tıklanma istatistiği veya ileri seviye izlemek için boş bir alan. Şimdilik gerek yok.
-        console.log('Diyarbakır Oto Çekici 7/24 sitesi yüklendi.');
     </script>
 </body>
 </html>
